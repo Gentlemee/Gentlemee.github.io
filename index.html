@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faith Daniel — Portfolio</title>
+  <meta name="description" content="Faith Daniel — education, certificates, projects, and contact info." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --radius: 14px;
+    }
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Poppins, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--card);
+      padding: 12px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+    header.hero {
+      background: linear-gradient(135deg, var(--accent), #4f46e5);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header.hero img {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 16px;
+    }
+    header.hero h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    header.hero p {
+      font-size: 1.1rem;
+      color: #e0e7ff;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--accent);
+      padding-left: 8px;
+    }
+
+    ul.timeline {
+      list-style: none;
+    }
+    ul.timeline li {
+      background: rgba(0,0,0,0.03);
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .btn:hover { background: #1d4ed8; }
+    .btn.ghost {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+    .btn.ghost:hover { background: var(--accent); color: #fff; }
+
+    /* SOCIAL ICONS */
+    .social-icons a {
+      font-size: 1.3rem;
+      margin: 0 10px;
+      color: var(--accent);
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: #1d4ed8;
+    }
+
+    /* READ MORE */
+    #more { display: none; }
+
+    /* CERTIFICATES */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .cert-item {
+      text-align: center;
+      background: rgba(0,0,0,0.03);
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .cert-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .cert-item p {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 30px;
+      background: var(--card);
+      border-top: 2px solid var(--accent);
+    }
+    footer marquee {
+      font-weight: 600;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <!-- NAVBAR -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="photo.jpg" alt="Faith Daniel">
+    <h1>Faith Daniel</h1>
+    <p>Data Analyst · Web Developer · Student at University of Abuja</p>
+    <div style="margin-top:16px;">
+      <a href="resume.pdf" class="btn">Download CV</a>
+      <button id="themeToggle" class="btn ghost">Toggle Theme</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <!-- LEFT -->
+    <div>
+      <div class="card" id="about">
+        <h2>About</h2>
+        <p>
+          Hi, I’m Faith Daniel, a passionate Computer Science student at the University of Abuja. 
+          I have a strong interest in data analysis and web development. 
+          <span id="dots">...</span>
+          <span id="more">
+            I enjoy turning data into meaningful insights and creating functional, user-friendly websites. 
+            I’m always eager to learn new technologies, work on innovative projects, and grow as a developer and analyst. 
+            My goal is to use technology to solve real-world problems and make an impact.
+          </span>
+        </p>
+        <button onclick="toggleReadMore()" id="readBtn" class="btn ghost">Read More</button>
+      </div>
+
+      <div class="card" id="education">
+        <h2>Education</h2>
+        <ul class="timeline">
+          <li><strong>B.Sc. Computer Science</strong> — University of Abuja <br>
+            <small>2019 – 2024</small>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CERTIFICATES -->
+      <div class="card" id="certificates">
+        <h2>Certificates</h2>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <img src="certificates/google-data-analytics.jpg" alt="Google Data Analytics">
+            <p><strong>Google Data Analytics</strong> — Jan 2024</p>
+            <a href="certificates/google-data-analytics.pdf" target="_blank" class="btn ghost">View</a>
+          </div>
+          <div class="cert-item">
+            <img src="certificates/fcc-responsive.jpg" alt="FreeCodeCamp Responsive Web Design">
+            <p><strong>FreeCodeCamp Responsive Web Design</strong> — Sep 2023</p>
+            <a href="certificates/fcc-responsive.pdf" target="_blank" class="btn ghost">View</a>
+          </div>
+          <!-- Add more certificates by copying this block -->
+        </div>
+      </div>
+
+      <div class="card" id="projects">
+        <h2>Projects</h2>
+        <ul class="timeline">
+          <li><strong>CRM Web App</strong> — A PHP/MySQL system for customer management.</li>
+          <li><strong>Material Portal</strong> — Upload and download course materials online.</li>
+        </ul>
+      </div>
+
+      <div class="card" id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:ochanyafaith24@gmail.com">ochanyafaith24@gmail.com</a></p>
+        <p>Phone: <a href="https://wa.me/2349134955820" target="_blank">+234 913 495 5820 (WhatsApp)</a></p>
+        <div class="social-icons">
+          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/2349134955820" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside>
+      <div class="card">
+        <h2>Quick Info</h2>
+        <p><strong>Location:</strong> Abuja, Nigeria</p>
+        <p><strong>Availability:</strong> Open for internships & freelance</p>
+        <p><strong>Skills:</strong> HTML, CSS, JavaScript, PHP, MySQL, Python, Data Analysis</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <marquee>© <span id="year"></span> Faith Daniel. All rights reserved.</marquee>
+  </footer>
+
+  <script>
+    // Year Auto Update
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme Toggle
+    const themeBtn = document.getElementById('themeToggle');
+    const root = document.body;
+    const saved = localStorage.getItem('site-theme');
+    if(saved){ root.setAttribute('data-theme', saved); }
+    themeBtn.addEventListener('click', ()=>{
+      const now = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', now);
+      localStorage.setItem('site-theme', now);
+    });
+
+    // Read More Function
+    function toggleReadMore() {
+      let dots = document.getElementById("dots");
+      let moreText = document.getElementById("more");
+      let btnText = document.getElementById("readBtn");
+
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.textContent = "Read More";
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.textContent = "Read Less";
+        moreText.style.display = "inline";
+      }
+    }
+  </script>
+</body>
+</html>
